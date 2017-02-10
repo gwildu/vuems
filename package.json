@@ -1,0 +1,28 @@
+{
+  "name": "vuems",
+  "version": "0.1.0",
+  "description": "A cms based on vue.js",
+  "main": "server.js",
+  "scripts": {
+    "test:lint": "eslint \"src/**/**.js\" \"src/**/**.vue\" server.js karma.conf.js \"spec/**/**.js\" \"spec/**/**.vue\"",
+    "test:unit": "karma start",
+    "test": "npm run test:lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwildu/vuems.git"
+  },
+  "keywords": [
+    "cms",
+    "vue.js"
+  ],
+  "author": "https://github.com/gwildu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gwildu/vuems/issues"
+  },
+  "homepage": "https://github.com/gwildu/vuems#readme",
+  "devDependencies": {
+    "gwi-eslint-config": "^1.0.0"
+  }
+}
