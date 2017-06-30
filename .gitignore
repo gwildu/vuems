@@ -1,7 +1,11 @@
-/.idea/
-/node_modules/
-/dist/
-/public/
-/.npmrc
-/.env
-/npm-debug*
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist

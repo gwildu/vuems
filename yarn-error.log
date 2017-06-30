@@ -1,0 +1,66 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add gulp
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  0.23.4
+
+Node version: 
+  6.10.3
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "vuems",
+    "version": "0.1.0",
+    "description": "A cms based on vue.js",
+    "main": "server.js",
+    "scripts": {
+      "test:lint": "eslint \"src/**/**.js\" \"src/**/**.vue\" server.js karma.conf.js \"spec/**/**.js\" \"spec/**/**.vue\"",
+      "test:unit": "karma start",
+      "test": "npm run test:lint"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/gwildu/vuems.git"
+    },
+    "keywords": [
+      "cms",
+      "vue.js"
+    ],
+    "author": "https://github.com/gwildu",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/gwildu/vuems/issues"
+    },
+    "homepage": "https://github.com/gwildu/vuems#readme",
+    "devDependencies": {
+      "babel-core": "^6.22.1",
+      "babel-plugin-transform-object-rest-spread": "^6.22.0",
+      "babel-plugin-transform-runtime": "^6.22.0",
+      "babel-preset-es2015": "^6.22.0",
+      "gulp": "^3.9.1",
+      "gulp-data": "^1.2.1",
+      "gulp-ext-replace": "^0.3.0",
+      "gulp-folders": "^1.1.0",
+      "gulp-pug": "^3.2.0",
+      "gwi-eslint-config": "^1.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.npmjs.org/rx-lite: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:852:19)
+      at ontimeout (timers.js:386:14)
+      at tryOnTimeout (timers.js:250:5)
+      at Timer.listOnTimeout (timers.js:214:5)
