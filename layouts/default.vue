@@ -1,20 +1,13 @@
 <template>
-  <div>
-    <vuems-page-settings>
-      <nuxt class="nuxt"/>
-    </vuems-page-settings>
-  </div>
+  <nuxt class="nuxt"/>
 </template>
 
 <script>
-  import vuemsPageSettings from '../vuems/page-settings.vue'
-
   export default {
-    components: {
-      'vuems-page-settings': vuemsPageSettings
-    }
+    middleware: 'vuems'
   }
 </script>
+
 
 <style>
 .nuxt {

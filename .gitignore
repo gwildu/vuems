@@ -9,3 +9,9 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# JetBrains idea folder
+.idea/
+
+# mac metadata file
+**/.DS_Store

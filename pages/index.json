@@ -1,0 +1,65 @@
+{
+  "name": "index",
+  "allowedWidgets": [
+    "widget1",
+    "widget2",
+    "widget3",
+    "logo",
+    "header"
+  ],
+  "template": "template1",
+  "widgets": [
+    {
+      "index": 0,
+      "name": "header",
+      "slot": "flex",
+      "content": {
+        "title": "vuems prototype",
+        "disclaimer": "vuems is based on vue.js and: "
+      }
+    },
+    {
+      "index": 1,
+      "name": "header",
+      "slot": "flex",
+      "content": {
+        "title": "vuems prototype",
+        "disclaimer": "vuems is based on vue.js and: "
+      }
+    },
+    {
+      "index": 2,
+      "name": "header",
+      "slot": "flex",
+      "content": {
+        "title": "vuems prototype",
+        "disclaimer": "vuems is based on vue.js and: "
+      }
+    },
+    {
+      "index": 3,
+      "name": "header",
+      "content": {
+        "title": "vuems prototype",
+        "disclaimer": "vuems is based on vue.js and: "
+      }
+    },
+    {
+      "index": 4,
+      "name": "header",
+      "content": {
+        "title": "vuems prototype",
+        "disclaimer": "vuems is based on vue.js and: "
+      }
+    },
+    {
+      "index": 5,
+      "name": "header",
+      "content": {
+        "title": "vuems prototype",
+        "disclaimer": "vuems is based on vue.js and: "
+      }
+    }
+  ]
+
+}

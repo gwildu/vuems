@@ -10,8 +10,23 @@ export default {
     ]
   },
   content: {
-    widgets: [
-      {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}}
+    groups: [
+      {
+        name: 'flexibles',
+        widgets: [
+          {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}},
+          {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}},
+          {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}}
+        ]
+      },
+      {
+        name: 'blocks',
+        widgets: [
+          {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}},
+          {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}},
+          {meta: {name: 'header'}, content: {title: 'vuems prototype', disclaimer: 'vuems is based on vue.js and: '}}
+        ]
+      }
     ]
   }
 }

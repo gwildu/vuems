@@ -1,20 +1,17 @@
 'use strict'
 
 const initPage = (pageData) => {
-  const meta = pageData.meta
-
-  const getWidgetComponents = () => {
-    console.log('meta: ', meta)
+  const getComponents = () => {
     let result = {}
-    meta.allowedWidgets.forEach((name) => {
-      console.log('name: ', name)
+    pageData.allowedWidgets.forEach((name) => {
       result[name + '-widget'] = require('../widgets/' + name + '.vue')
     })
+    result[pageData.template + '-template'] = require('../templates/' + pageData.template + '.vue')
     return result
   }
 
   return {
-    getWidgetComponents
+    getComponents
   }
 }
 

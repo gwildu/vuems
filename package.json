@@ -5,6 +5,8 @@
   "author": "@gwildu",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
+    "dotenv": "^4.0.0",
     "node-sass": "^4.5.3",
     "nuxt": "latest",
     "sass-loader": "^6.0.6"
@@ -13,6 +15,7 @@
     "dev": "PORT=3004 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "start:api": "node api",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"

@@ -1,4 +1,10 @@
+const dotenv = require('dotenv')
+dotenv.config('.env.vuems.default')
+
 module.exports = {
+  env: {
+    VUEMS_API_URL_PAGES: process.env.VUEMS_API_URL_PAGES || 'http://localhost:8888/api/pages'
+  },
   /*
   ** Headers of the page
   */
