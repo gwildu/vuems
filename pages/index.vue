@@ -1,12 +1,11 @@
 <template>
   <div>
-    <vuems-page :name="name">
+    <vuems-page :page="pageData">
       <component v-if="template" :is="template + '-template'">
         <vuems-widget v-if="widgets" v-for="widget in widgets" :key="widget.index" :name="widget.name" :slot="widget.slot">
           <component :is="widget.name + '-widget'" :content="widget.content"/>
         </vuems-widget>
       </component>
-
     </vuems-page>
   </div>
 </template>
@@ -16,8 +15,7 @@
   import widget from '../vuems/widget-settings.vue'
   import pageData from './index.json'
   import Vuems from '../vuems/index'
-  import vuex from 'vuex'
-  const mapGetters = vuex.mapGetters
+  import {mapGetters} from 'vuex'
   const vuems = Vuems.initPage(pageData)
   export default {
     components: {
@@ -29,9 +27,6 @@
       ...mapGetters({
         pageData: 'vuems_page'
       }),
-      name () {
-        return (this.pageData && this.pageData.name)
-      },
       widgets () {
         return this.pageData && this.pageData.widgets
       },

@@ -1,6 +1,7 @@
 'use strict'
 import getPage from './helpers/get-page'
-const debug = require('debug')('vuems:vuex')
+import savePage from './helpers/save-page'
+import getTemplates from './helpers/get-templates'
 const Vue = require('vue')
 
 const emptyPage = {
@@ -11,25 +12,37 @@ export default {
   state: {
     // ...getPageNames,
     currentPage: '',
-    pages: {}
+    pages: {},
+    templates: []
   },
   getters: {
     vuems_page (state) {
       return state.pages[state.currentPage] || emptyPage
+    },
+    vuems_templates (state) {
+      return state.templates
     }
   },
   actions: {
-    vuems_fetchPageData ({commit}, name) {
-      getPage(name)
+    vuems_fetchPageData ({state, commit}, name) {
+      const pageToFetch = name || state.currentPage
+      getPage(pageToFetch)
         .then((response) => {
           commit('vuems_setPageData', response.data)
         })
-        .catch((error) => {
-          debug('Error when trying to fetch page data from api: ', error)
+    },
+    vuems_fetchTemplates ({commit}) {
+      getTemplates()
+        .then((response) => {
+          commit('vuems_setTemplates', response.data)
         })
     },
     vuems_setCurrentPage ({commit}, name) {
       commit('vuems_setCurrentPage', name)
+    },
+    vuems_savePageData ({state}, name) {
+      const pageToSave = name || state.currentPage
+      return savePage(pageToSave, state.pages[pageToSave])
     }
   },
   mutations: {
@@ -38,6 +51,9 @@ export default {
     },
     vuems_setCurrentPage (state, name) {
       state.currentPage = name
+    },
+    vuems_setTemplates (state, templates) {
+      state.templates = templates
     }
   }
 }
