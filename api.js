@@ -5,6 +5,7 @@ const express = require('express')
 const debug = require('debug')('vuems:api')
 const dotenv = require('dotenv')
 const middlewares = require('./api/middlewares')
+const bodyParser = require('body-parser')
 const routes = require('./api/routes')
 
 dotenv.config({path: '.env.vuems'})
@@ -12,6 +13,9 @@ dotenv.config({path: '.env.vuems.default'})
 
 const app = express()
 const port = process.env.VUEMS_API_PORT || 8888
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 middlewares.beforeRoutes(app)
 routes(app)

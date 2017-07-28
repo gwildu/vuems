@@ -1,12 +1,13 @@
 'use strict'
-const dummy = require('./middlewares/dummy')
+const cors = require('./middlewares/cors')
 
 const beforeRoutes = (app) => {
-  app.use(dummy)
+  // add here some middlewares that will be executed before the routing
+  app.use(cors)
 }
 
 const afterRoutes = (app) => {
-  app.use(dummy)
+  // add here some middlewares that will be executed after the routing
 }
 
 module.exports = {

@@ -3,8 +3,9 @@ dotenv.config('.env.vuems.default')
 
 module.exports = {
   env: {
-    VUEMS_API_URL_PAGES: process.env.VUEMS_API_URL_PAGES || 'http://localhost:8888/api/pages',
-    VUEMS_API_URL_TEMPLATES: process.env.VUEMS_API_URL_TEMPLATES || 'http://localhost:8888/api/templates'
+    VUEMS_API_URL_PAGES: process.env.VUEMS_API_BASE + process.env.VUEMS_API_PATH_PAGES || 'http://localhost:8888/api/pages',
+    VUEMS_API_URL_PAGE: process.env.VUEMS_API_BASE + process.env.VUEMS_API_PATH_PAGE || 'http://localhost:8888/api/page',
+    VUEMS_API_URL_TEMPLATES: process.env.VUEMS_API_BASE + process.env.VUEMS_API_PATH_TEMPLATES || 'http://localhost:8888/api/templates'
   },
   /*
   ** Headers of the page

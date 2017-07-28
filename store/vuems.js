@@ -13,7 +13,8 @@ export default {
     // ...getPageNames,
     currentPage: '',
     pages: {},
-    templates: []
+    templates: [],
+    newPage: {}
   },
   getters: {
     vuems_page (state) {
@@ -40,9 +41,11 @@ export default {
     vuems_setCurrentPage ({commit}, name) {
       commit('vuems_setCurrentPage', name)
     },
-    vuems_savePageData ({state}, name) {
-      const pageToSave = name || state.currentPage
-      return savePage(pageToSave, state.pages[pageToSave])
+    vuems_saveNewPage ({state}) {
+      return savePage(state.newPage)
+    },
+    vuems_updateNewPageData ({commit}, page) {
+      commit('vuems_setNewPage', page)
     }
   },
   mutations: {
@@ -54,6 +57,9 @@ export default {
     },
     vuems_setTemplates (state, templates) {
       state.templates = templates
+    },
+    vuems_setNewPage (state, page) {
+      state.newPage = page
     }
   }
 }

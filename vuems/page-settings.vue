@@ -29,6 +29,8 @@
       <vuems-new-page
         v-if="showNewPageForm"
         :templates="templates"
+        @update="updateNewPageData"
+        @save="saveNewPage"
       ></vuems-new-page>
     </div>
     <section class="content">
@@ -61,11 +63,19 @@
     },
     methods: {
       ...mapActions([
-        'vuems_fetchTemplates'
+        'vuems_fetchTemplates',
+        'vuems_updateNewPageData',
+        'vuems_saveNewPage'
       ]),
       prepareNewPage () {
         this.vuems_fetchTemplates()
         this.showNewPageForm = true
+      },
+      updateNewPageData (pageData) {
+        this.vuems_updateNewPageData(pageData)
+      },
+      saveNewPage () {
+        this.vuems_saveNewPage()
       }
     }
   }
